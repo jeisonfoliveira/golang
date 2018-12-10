@@ -5,23 +5,23 @@ import (
 	"strconv"
 )
 
-func main(){
-	var valorTotal int 
+func main() {
+	var valorTotal int
 
 	proximaNota := false
 	valorSoma := 0
 	fmt.Println("Digite o valor para conversão:")
 	fmt.Scanf("%d", &valorTotal)
 
-	arrayNotas := [7]int{100,50,20,10,5,2,1}
+	arrayNotas := [7]int{100, 50, 20, 10, 5, 2, 1}
 	mapNotas := map[int]int{
 		100: 0,
-		50: 0,
-		20: 0,
-		10: 0,
-		5: 0,
-		2: 0,
-		1: 0,
+		50:  0,
+		20:  0,
+		10:  0,
+		5:   0,
+		2:   0,
+		1:   0,
 	}
 
 	i := 0
@@ -35,18 +35,18 @@ func main(){
 			proximaNota = false
 		}
 		//enquanto o valor da soma permanecer menor ou igual o valor da nota atual continua somando
-		if valorSoma + valorNota <= valorTotal {
-			if _, ok := mapNotas[valorNota]; ok{
+		if valorSoma+valorNota <= valorTotal {
+			if _, ok := mapNotas[valorNota]; ok {
 				mapNotas[valorNota] += 1
 				valorSoma += valorNota
 			}
-		}else{
+		} else {
 			proximaNota = true
 		}
 	}
 	i = 0
 	valorNota = arrayNotas[i]
-	sliceNotas := make([][]int,0,0)
+	sliceNotas := make([][]int, 0, 0)
 	for range mapNotas {
 		valorNota = arrayNotas[i]
 		if q, _ := mapNotas[valorNota]; q > 0 {
