@@ -1,1 +1,1 @@
-Various golang study projects
+Golang study projects
