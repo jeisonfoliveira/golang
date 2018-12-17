@@ -7,12 +7,9 @@ import (
 
 func main() {
 	var valorTotal int
-
-	proximaNota := false
-	valorSoma := 0
-	fmt.Println("Digite o valor para conversão:")
-	fmt.Scanf("%d", &valorTotal)
-
+	var valorSoma int
+	var proximaNota bool
+	var i int
 	arrayNotas := [7]int{100, 50, 20, 10, 5, 2, 1}
 	mapNotas := map[int]int{
 		100: 0,
@@ -24,7 +21,9 @@ func main() {
 		1:   0,
 	}
 
-	i := 0
+	fmt.Println("Digite o valor para conversão:")
+	fmt.Scanf("%d", &valorTotal)
+
 	//inicializa o valor da nota com 100 reais
 	valorNota := arrayNotas[i]
 	//enquanto não atingir o valor estipulado total permanece no loop
