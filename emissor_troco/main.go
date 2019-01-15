@@ -1,36 +1,16 @@
 package main
 
 import (
-	"emissor_troco/converter"
+	"emissor_troco/conversao"
 	"fmt"
 	"strconv"
 )
-
-type notificacao interface {
-	notificar()
-}
-
-type funcionario struct {
-	nome string
-}
-
-func (c funcionario) notificar() {
-	fmt.Println("Movimentação realizada pelo funcionario: " + c.nome)
-}
-
-type gerente struct {
-	nome string
-}
-
-func (g gerente) notificar() {
-	fmt.Println("Movimentação realizada pelo gerente: " + g.nome)
-}
 
 func main() {
 
 	valorTotal := identificaValorConversao()
 
-	sliceNotas := converter.ConverterValorTroco(valorTotal)
+	sliceNotas := conversao.ConverterValorTroco(valorTotal)
 
 	fmt.Println("O troco é: ")
 	for _, value := range sliceNotas {
@@ -52,10 +32,4 @@ func identificaValorConversao() int {
 	fmt.Scanf("%d", &valorTotal)
 
 	return valorTotal
-}
-
-func emitirNotificacao(n notificacao) {
-
-	n.notificar()
-
 }

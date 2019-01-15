@@ -1,4 +1,4 @@
-package converter
+package conversao
 
 func ConverterValorTroco(valorTotal int) [][]int{
 	var valorSoma int
