@@ -1,6 +1,6 @@
 package conversao
 
-func ConverterValorTroco(valorTotal int) [][]int{
+func ConverterValorTroco(valorTotal int) [][]int {
 	var valorSoma int
 	var proximaNota bool
 	var i int
